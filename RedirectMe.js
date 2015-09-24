@@ -1,7 +1,7 @@
 /*TakeMeTo.js - by Danieltamkin*/
 /*Redirect Somewhere else*/
 (function( $ ) {
-	$.fn.centerThis = function(data) {
+	$.fn.RedirectMe = function($data) {
     $this = $(this);
     	datacheck($data);
     	/*data*/
@@ -10,12 +10,9 @@
     	}
     	function datatemplate(){
     	  return data = {
-    	    content: $this,
-    	    sanitize: true,
-    			cull: true,
-    			images: true
-    			compile: true
-    	  }
+    	    to: null,
+					condition: false
+    	  };
     	}
     	function datascrub(data){
     	  template = datatemplate();
@@ -43,18 +40,44 @@
     		}
     		return data;
     	}
-    function redirect() {
-      var fullHref     = window.location.href,
-          host         = window.location.host,
-          protocol     = window.location.protocol,
-          splitAddress = protocol+"//"+host+"/about/";
-          /*indexOf      = fullHref.indexOf(splitAddress),
-          splitURI     = fullHref.replace(splitAddress, "");
-          splitURI      =*/
-      window.location.href = splitAddress;
+		function getHost(){
+      var host         = window.location.host,
+          protocol     = window.location.protocol;
+			return protocol+"//"+host;
+		}
+		function getURI(){
+			var fullHref     = window.location.href,
+					fullURI      = fullHref.replace(getHost(), "");
+			return fullURI;
+		}
+		function condition(){
+			var host 	= getHost(),
+					URI 	= getURI();
+			// compare and run.
+		}
+		function redirect(){
+			var redirectto = getHost()+$data.to;
+			console.log(redirectto);
+			window.location.href = redirectto;
+		}
+    function calculate() {
+			var host 	= getHost(),
+					URI 	= getURI();
+			console.log("ran!"+$data.condition);
+			if($data.to == null){
+				console.log("RedirectMe - ERROR: no 'to' address, see the docs.");
+			}
+			else{
+				if($data.condition == false){
+					redirect();
+				}
+				else{
+					// condition did its thing, all is well.
+				}
+			}
     }
     return this.each(function() {
-      redirect();
+      calculate();
 		});
 	 };
 }( jQuery ));
