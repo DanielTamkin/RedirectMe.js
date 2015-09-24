@@ -12,7 +12,7 @@
     	  return data = {
     	    to: null,
 					condition: false
-    	  }
+    	  };
     	}
     	function datascrub(data){
     	  template = datatemplate();
