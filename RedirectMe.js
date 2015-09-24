@@ -45,8 +45,34 @@
           protocol     = window.location.protocol;
 			return protocol+host;
 		}
+		function getURI(){
+			var fullHref     = window.location.href,
+					fullURI      = fullHref.replace(getHost(), "");
+			return fullURI;
+		}
+		function condition(){
+			if($data.condition != false){
+				var host 	= getHost(),
+						URI 	= getURI();
+			}
+			else{
+				return false;// tell calculate to not run me further.
+			}
+		}
     function calculate() {
-			console.log(getHost());
+			var host 	= getHost(),
+					URI 	= getURI();
+			if($data.to == null){
+				// do nothing we cant.
+			}
+			else{
+				if(condition() == false){
+					window.location.href = host+$data.to;
+				}
+				else{
+					// condition did its thing, all is well.
+				}
+			}
     }
     return this.each(function() {
       calculate();
