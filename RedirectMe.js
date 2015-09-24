@@ -1,7 +1,7 @@
 /*TakeMeTo.js - by Danieltamkin*/
 /*Redirect Somewhere else*/
 (function( $ ) {
-	$.fn.centerThis = function(data) {
+	$.fn.RedirectMe = function($data) {
     $this = $(this);
     	datacheck($data);
     	/*data*/
@@ -10,11 +10,8 @@
     	}
     	function datatemplate(){
     	  return data = {
-    	    content: $this,
-    	    sanitize: true,
-    			cull: true,
-    			images: true
-    			compile: true
+    	    to: null,
+					condition: false
     	  }
     	}
     	function datascrub(data){
@@ -43,18 +40,16 @@
     		}
     		return data;
     	}
-    function redirect() {
-      var fullHref     = window.location.href,
-          host         = window.location.host,
-          protocol     = window.location.protocol,
-          splitAddress = protocol+"//"+host+"/about/";
-          /*indexOf      = fullHref.indexOf(splitAddress),
-          splitURI     = fullHref.replace(splitAddress, "");
-          splitURI      =*/
-      window.location.href = splitAddress;
+		function getHost(){
+      var host         = window.location.host,
+          protocol     = window.location.protocol;
+			return protocol+host;
+		}
+    function calculate() {
+			console.log(getHost());
     }
     return this.each(function() {
-      redirect();
+      calculate();
 		});
 	 };
 }( jQuery ));
