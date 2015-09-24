@@ -43,7 +43,7 @@
 		function getHost(){
       var host         = window.location.host,
           protocol     = window.location.protocol;
-			return protocol+host;
+			return protocol+"//"+host;
 		}
 		function getURI(){
 			var fullHref     = window.location.href,
@@ -55,6 +55,11 @@
 					URI 	= getURI();
 			// compare and run.
 		}
+		function redirect(){
+			var redirectto = getHost()+$data.to;
+			console.log(redirectto);
+			window.location.href = redirectto;
+		}
     function calculate() {
 			var host 	= getHost(),
 					URI 	= getURI();
@@ -64,7 +69,7 @@
 			}
 			else{
 				if($data.condition == false){
-					window.location.href = host+$data.to;
+					redirect();
 				}
 				else{
 					// condition did its thing, all is well.
