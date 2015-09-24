@@ -51,22 +51,19 @@
 			return fullURI;
 		}
 		function condition(){
-			if($data.condition != false){
-				var host 	= getHost(),
-						URI 	= getURI();
-			}
-			else{
-				return false;// tell calculate to not run me further.
-			}
+			var host 	= getHost(),
+					URI 	= getURI();
+			// compare and run.
 		}
     function calculate() {
 			var host 	= getHost(),
 					URI 	= getURI();
+			console.log("ran!"+$data.condition);
 			if($data.to == null){
-				// do nothing we cant.
+				console.log("RedirectMe - ERROR: no 'to' address, see the docs.");
 			}
 			else{
-				if(condition() == false){
+				if($data.condition == false){
 					window.location.href = host+$data.to;
 				}
 				else{
