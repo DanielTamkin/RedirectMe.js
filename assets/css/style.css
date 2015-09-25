@@ -1,0 +1,229 @@
+body{
+  background:#fff;
+  color:#273a34;
+  font-family:'WorkSans';
+}
+::-moz-selection { /* Code for Firefox */
+  color: #222;
+  background: #619dba;
+}
+::selection {
+    color: #222;
+    background: #619dba;
+}
+a{
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -ms-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+a:hover{
+  color:#746969;
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -ms-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+p a{
+  padding:1px 3px;
+  background:#fff;
+  box-sizing:border-box;
+  color:#201919;
+}
+/*> generals / contents*/
+  section.content h1{
+    margin-bottom:0.6em;
+    font-family:'Lato';
+  }
+  section.content p{
+    line-height:1.4;
+  }
+  section.content a{
+    font-weight:600;
+  }
+/*> nav*/
+  #site-nav{
+    padding:1.9em 0;
+    width:100%;
+    display:inline-block;
+    z-index:117;
+    color:#222;
+    text-align:center;
+    font-family: 'Lato-Bold';
+  }
+  #site-nav.hero{
+    position:absolute;
+    top:0;
+  }
+  #site-nav .wrapper{
+    display:inline-block;
+  }
+  #site-nav section.hamburger{
+    float:right;
+    display:none;
+    vertical-align:middle;
+    cursor:pointer;
+    font-size:2em;
+  }
+  #site-nav section.hamburger img{
+    height:29px;
+    width:49px;
+  }
+  #site-nav section.title{
+    float:left;
+    font-size:0.6em;
+  }
+  #site-nav section.title span{
+    color:#343434;
+    font-family: 'Lato-Black';
+  }
+  #site-nav section.nav{
+    margin-top:7px;
+    margin-left:6px;
+    float:left;
+  }
+  #site-nav section.nav li{
+    margin:0 0.5em;
+    display:inline-block;
+    vertical-align:middle;
+  }
+  #site-nav section.nav .hamburger-show{
+    display:none;
+  }
+  #site-nav section.nav .hamburger-show hr{
+    margin:6px auto;
+    width:100px;
+    border:1px solid #bebfbb;
+  }
+  #site-nav section.follow{
+    margin-top:6px;
+    float:right;
+  }
+  /*media*/
+  @media all and (max-width:900px){
+    #site-nav section.nav{
+      margin-top:5px;
+    }
+  }
+  @media all and (max-width: 710px) {
+    #site-nav{
+      background:#fff;
+      color:#222;
+    }
+    #site-nav section.title span{
+      color:#343434;
+    }
+    #site-nav .wrapper{
+      width:96%;
+    }
+    #site-nav .hamburger-hide{
+      display:none;
+    }
+    #site-nav section.nav{
+      padding:0.2em 0;
+      width:100%;
+      display:none;
+    }
+    #site-nav section.nav .hamburger-show{
+      display:block;
+    }
+    #site-nav section.hamburger{
+      display:block;
+    }
+  }
+  @media all and (max-width:300px){
+    #site-nav section.title{
+      font-size:0.55em;
+    }
+  }
+/*> repos*/
+  #repos.list{
+    margin:0.1em auto;
+    min-height:100px;
+  }
+  #repos.hero{
+    height:100%;
+    width:100%;
+    background:#ff7a00;
+  }
+  #repos.hero article{
+    padding:0.1em;
+    box-sizing:border-box;
+    height:100%!important;
+    width:100%;
+    background:#2cd4cb;
+  }
+  #repos article{
+    padding:3.1em 0;
+    background:#efefef;
+  }
+  #repos article aside.preview{
+    width:50%;
+    float:left;
+    text-align:center;
+  }
+  #repos article aside.preview img{
+    height:auto;
+    width:94%;
+    display:inline-block;
+  }
+  #repos article section.content{
+    width:45%;
+    float:right;
+  }
+
+  #repos article ul.buttons{
+    margin-top:0.5em;
+    margin-left:-7px;
+    text-align:left;
+  }
+  #repos article ul.buttons li{
+    margin:4px 9px;
+    display:inline-block;
+  }
+  @media all and (max-width:860px){
+    #repos article{
+      display:inline-block;
+    }
+    #repos article .center{
+      width:90%;
+    }
+    #repos article section.content{
+      width:52%;
+    }
+    #repos article aside.preview{
+      width:44%;
+    }
+  }
+  @media all and (max-width:700px){
+    #repos article .center{
+      width:96%;
+    }
+    #repos article section.content{
+      width:59%;
+    }
+    #repos article aside.preview{
+      width:35%;
+    }
+  }
+  @media all and (max-width:800px){
+    #repos article .center{
+      width:92%;
+    }
+    #repos article section.content{
+      width:100%;
+    }
+    #repos article aside.preview{
+      width:100%;
+    }
+  }
+/*> site-footer*/
+  #site-footer{
+    padding:2.1em 0;
+    box-sizing:border-box;
+    width:100%;
+    background:#9098a2;
+    display:inline-block;
+  }
