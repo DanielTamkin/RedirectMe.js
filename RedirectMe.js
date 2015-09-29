@@ -63,9 +63,8 @@
     function calculate() {
 			var host 	= getHost(),
 					URI 	= getURI();
-			console.log("ran!"+$data.condition);
 			if($data.to == null){
-				console.log("RedirectMe - ERROR: no 'to' address, see the docs.");
+				console.log("RedirectMe - ERROR: no 'to' address, this is an error on your part.");
 			}
 			else{
 				if($data.condition == false){
