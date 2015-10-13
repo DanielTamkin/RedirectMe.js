@@ -4,7 +4,7 @@
 	$.fn.RedirectMe = function($data) {
     $this = $(this);
     	datacheck($data);
-    	/*data*/
+  /*< data*/
     	function datacheck(data){
     	  $data = datascrub(data);
     	}
@@ -40,10 +40,16 @@
     		}
     		return data;
     	}
+	/*> get*/
 		function getHost(){
       var host         = window.location.host,
           protocol     = window.location.protocol;
-			return protocol+"//"+host;
+			if(protocol == "file:"){
+				return "";
+			}
+			else{
+				return protocol+"//"+host;
+			}
 		}
 		function getURI(){
 			var fullHref     = window.location.href,
@@ -54,6 +60,7 @@
 			var host 	= getHost(),
 					URI 	= getURI();
 			// compare and run.
+			// used at later date
 		}
 		function redirect(){
 			var redirectto = getHost()+$data.to;
