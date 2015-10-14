@@ -51,12 +51,14 @@ section.content a{
     position:relative;
   }
   #site-hero section.wrapper{
+    display:inline-block;
     color:#fff;
-    text-align:left;
     /*background:rgb(156, 115, 142);*/
   }
-  #site-hero aside.left{
+  #site-hero aside{
     display:inline-block;
+  }
+  #site-hero aside.left{
     /*background:rgb(134, 158, 252);*/
   }
   #site-hero aside.left h1{
